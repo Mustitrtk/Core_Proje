@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
-    public class SkillManager : IGenericService<Skill>
+    public class SkillManager : ISkillService
     {
         ISkillDal _skillDal;
         public SkillManager(ISkillDal skillDal)
@@ -19,7 +19,7 @@ namespace BusinessLayer.Concrete
 
         public List<Skill> GetAll()
         {
-            throw new NotImplementedException();
+            return _skillDal.Get();
         }
 
         public Skill GetById(int id)
