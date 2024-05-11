@@ -10,7 +10,7 @@ namespace Core_Proje.ViewComponents.Feature
         public IViewComponentResult Invoke() 
         {
             var values = featureManager.GetAll();
-            return View(values); 
+            return View(values); //Values componentte nasıl tanılıyor
         }
     }
 }
