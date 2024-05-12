@@ -12,7 +12,7 @@ namespace EntityLayer.Concrete
         [Key]
         public int ExperinceId{ get; set; }
         public string Name { get; set; }
-        public DateTime Date { get; set; }
+        public string Date { get; set; }
         public string ImageUrl { get; set; }
         public string Description { get; set; }
     }
