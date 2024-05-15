@@ -1,9 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BusinessLayer.Concrete;
+using DataAccessLayer.EntityFramework;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Core_Proje.ViewComponents.Contact
 {
     public class ContactList : ViewComponent
     {
-        public IViewComponentResult Invoke() { return View(); }
+        ContactManager _contactManager = new ContactManager(new EfContactDal());
+        public IViewComponentResult Invoke() {
+            var values = _contactManager.GetAll();
+            return View(values); 
+        }
     }
 }

@@ -26,10 +26,10 @@
             <div class="section px-2 px-lg-4 pb-4 pt-5 mb-5" id="contact">
                 <div class="container-narrow">
                     <div class="text-center mb-5">
-                        <h2 class="marker marker-center">Contact Me</h2>
+                        <h2 class="marker marker-center">İletişim</h2>
                     </div>
                     <div class="row">
-                        @await Component.InvokeAsync("SendMessage") <!--SendMessage ViewComponent-->
+                        @await Html.PartialAsync("MessagePartial") <!--SendMessage ViewComponent-->
                         @await Component.InvokeAsync("ContactList") <!--ContactList ViewComponent-->
                     </div>
                 </div>
