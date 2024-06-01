@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
     <!-- Icons -->
     <link rel="stylesheet" href="~/argon-dashboard-master/assets/vendor/nucleo/css/nucleo.css" type="text/css">
-    <link rel="stylesheet" href="~/argon-dashboard-master/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
+    <link rel="stylesheet" href="~/argon-dashboard-master/assets/vendor/fortawesome/fontawesome-free/css/all.min.css" type="text/css">
     <!-- Page plugins -->
     <!-- Argon CSS -->
     <link rel="stylesheet" href="~/argon-dashboard-master/assets/css/argon.css?v=1.2.0" type="text/css">
@@ -61,15 +61,15 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="icons.html">
+                            <a class="nav-link" href="/Skill/Index">
                                 <i class="ni ni-planet text-orange"></i>
-                                <span class="nav-link-text">Icons</span>
+                                <span class="nav-link-text">Skill</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="map.html">
+                            <a class="nav-link active" href="/Feature/index">
                                 <i class="ni ni-pin-3 text-primary"></i>
-                                <span class="nav-link-text">Google</span>
+                                <span class="nav-link-text">Feature</span>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -412,7 +412,7 @@
             <div class="row">
                 <div class="col">
                     <div class="card border-0">
-                        <div id="map-default" class="map-canvas" data-lat="40.748817" data-lng="-73.985428" style="height: 600px;"></div>
+                        @RenderBody()
                     </div>
                 </div>
             </div>
@@ -455,6 +455,20 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTTfWur0PDbZWPr7Pmq8K3jiDp0_xUziI"></script>
     <!-- Argon JS -->
     <script src="~/argon-dashboard-master/assets/js/argon.js?v=1.2.0"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const navLinks = document.querySelectorAll('.nav-item .nav-link');
+            const currentPath = window.location.pathname;
+
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPath) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
