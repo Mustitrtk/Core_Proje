@@ -24,22 +24,22 @@ namespace BusinessLayer.Concrete
 
         public Skill GetById(int id)
         {
-            throw new NotImplementedException();
+            return _skillDal.GetById(id);
         }
 
         public void TAdd(Skill t)
         {
-            throw new NotImplementedException();
+            _skillDal.Add(t);
         }
 
         public void TDelete(int id)
         {
-            throw new NotImplementedException();
+            _skillDal.DeleteById(id);
         }
 
         public void TUpdate(Skill t)
         {
-            throw new NotImplementedException();
+            _skillDal.Update(t);
         }
     }
 }

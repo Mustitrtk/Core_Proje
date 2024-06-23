@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewData["Title"] = "AddSkill";
+    Layout = "~/Pages/Shared/_AdminLayout.cshtml";
+}
+
+<h1>AddSkill</h1>
+<br />
+<form class="form-group" method="post">
+    @Html.Label("Yetenek Başlığı")
+    <input class="form-control" type="text" name="Title"/>
+    @Html.Label("Yetenek Değeri")
+    <input class="form-control" type="number" name="Value" />
+    <input type="submit" class="form-control btn btn-primary"/>
+</form>
