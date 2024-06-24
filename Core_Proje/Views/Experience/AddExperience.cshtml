@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewData["Title"] = "AddExperience";
+    Layout = "~/Pages/Shared/_AdminLayout.cshtml";
+}
+
+<h1>AddExperience</h1>
+<br />
+<form class="form-group" method="post">
+    @Html.Label("Deneyim Başlığı")
+    <input class="form-control" type="text" name="Name" />
+    @Html.Label("Deneyim Tarih")
+    <input class="form-control" type="date" name="Date" />
+    @Html.Label("Deneyim Fotoğraf")s
+    <input class="form-control" type="text" name="ImageUrl" />
+    @Html.Label("Deneyim Açıklaması")
+    <input class="form-control" type="text-area" name="Description" />
+    <input type="submit" class="form-control btn btn-primary" />
+</form>
