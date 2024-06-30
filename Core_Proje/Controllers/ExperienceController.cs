@@ -32,5 +32,19 @@ namespace Core_Proje.Controllers
             _experienceManager.TDelete(id);
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public IActionResult EditExperience(int id)
+        {
+            var value = _experienceManager.GetById(id);
+            return View(value);
+        }
+
+        [HttpPost]
+        public IActionResult EditExperience(Experience e)
+        {
+            _experienceManager.TUpdate(e);
+            return RedirectToAction("Index");
+        }
     }
 }
