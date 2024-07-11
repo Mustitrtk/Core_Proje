@@ -40,8 +40,8 @@ namespace Core_Proje.Controllers
                     ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
                 }
             }
-            
-            return View()
+
+            return View();
         }
     }
 }

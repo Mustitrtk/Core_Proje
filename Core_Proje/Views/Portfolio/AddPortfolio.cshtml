@@ -10,24 +10,31 @@
     <br />
     @Html.Label("Deneyim Başlığı")
     @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x=>x.Title,"",new {@class="text-danger"});
     <br />
     @Html.Label("Deneyim Fotoğrafı")
     @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.ImageUrl,"",new {@class="text-danger"});
     <br />
     @Html.Label("Deneyim Fotoğrafı (Küçük)")
     @Html.TextBoxFor(x => x.ImageUrl2, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.ImageUrl2,"",new {@class="text-danger"});
     <br />
     @Html.Label("Deneyim Dosyaları")
     @Html.TextBoxFor(x => x.PathUrl, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.PathUrl,"",new {@class="text-danger"});
     <br />
     @Html.Label("Platform")
     @Html.TextBoxFor(x => x.Platform, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Platform,"",new {@class="text-danger"});
     <br />
     @Html.Label("Ücret")
     @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x=>x.Price,"",new {@class="text-danger"});
     <br />
     @Html.Label("Aşama")
     @Html.TextBoxFor(x => x.Value, new { @class = "form-control", type = "number", min = "0", max = "100" })
+    @Html.ValidationMessageFor(x=>x.Value,"",new {@class="text-danger"});
     <br />
     <input type="submit" value="Kaydet" class="btn btn-primary" />
 }
