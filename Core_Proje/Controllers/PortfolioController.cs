@@ -43,5 +43,26 @@ namespace Core_Proje.Controllers
 
             return View();
         }
+
+        [HttpDelete]
+        public IActionResult DeletePortfolio(int id) 
+        {
+            _portfolioManager.TDelete(id);
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult EditPortfolio(int id) 
+        {
+            var values = _portfolioManager.GetById(id);
+            return View(values);
+        }
+
+        [HttpPost]
+        public IActionResult EditPortfolio(Portfolio p)
+        {
+            _portfolioManager.TUpdate(p);
+            return RedirectToAction("Index");
+        }
     }
 }
