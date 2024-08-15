@@ -1,4 +1,4 @@
-﻿
+﻿@model EntityLayer.Concrete.Skill;
 @{
     ViewData["Title"] = "AddSkill";
     Layout = "~/Pages/Shared/_AdminLayout.cshtml";
@@ -8,8 +8,10 @@
 <br />
 <form class="form-group" method="post">
     @Html.Label("Yetenek Başlığı")
-    <input class="form-control" type="text" name="Title"/>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Title, "", new { @class = "text-danger" })
     @Html.Label("Yetenek Değeri")
-    <input class="form-control" type="number" name="Value" />
+    @Html.TextBoxFor(x => x.Value, new { @class = "form-control", Type="number" })
+    @Html.ValidationMessageFor(x => x.Value, "", new { @class = "text-danger" })
     <input type="submit" class="form-control btn btn-primary"/>
 </form>
